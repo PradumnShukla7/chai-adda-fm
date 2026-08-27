@@ -1,0 +1,1455 @@
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  position: sticky;
+  top: 0;
+
+  z-index: 1;
+
+  width: 100%;
+  height: 100svh;
+  min-height: 650px;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  background: #100805;
+
+  scroll-snap-align: start;
+}
+
+/* =========================================================
+   HERO BACKGROUND
+   ========================================================= */
+
+.backgroundImage {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center center;
+
+  z-index: -5;
+
+  transform: scale(1.05);
+
+  transition: transform 0.15s ease-out;
+
+  will-change: transform;
+}
+
+/* =========================================================
+   HERO OVERLAY
+   ========================================================= */
+
+.darkOverlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -4;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 4, 2, 0.72) 0%,
+      rgba(8, 4, 2, 0.32) 55%,
+      rgba(8, 4, 2, 0.45) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(4, 2, 1, 0.55),
+      transparent 35%,
+      rgba(4, 2, 1, 0.7)
+    );
+}
+
+.vignette {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -3;
+
+  box-shadow: inset 0 0 180px rgba(0, 0, 0, 0.75);
+}
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  padding: 22px 4vw;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+
+  z-index: 10;
+}
+
+.brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.brandCup {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(245, 226, 205, 0.12);
+
+  border: 1px solid rgba(255, 235, 215, 0.22);
+
+  backdrop-filter: blur(10px);
+
+  font-size: 17px;
+}
+
+.brandName {
+  font-size: 15px;
+
+  font-weight: 700;
+
+  letter-spacing: -0.3px;
+}
+
+.brandSub {
+  margin-top: 3px;
+
+  font-size: 7px;
+
+  letter-spacing: 2.5px;
+
+  color: #d4c0ac;
+
+  opacity: 0.65;
+}
+
+.navLinks {
+  display: flex;
+
+  gap: 9px;
+}
+
+.navLinks a {
+  padding: 9px 16px;
+
+  border: 1px solid rgba(255, 235, 215, 0.18);
+
+  border-radius: 30px;
+
+  background: rgba(25, 13, 8, 0.28);
+
+  backdrop-filter: blur(12px);
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  font-size: 8px;
+
+  letter-spacing: 0.8px;
+
+  color: #f2dfca;
+
+  transition:
+    background 250ms ease,
+    border-color 250ms ease,
+    transform 250ms ease;
+}
+
+.navLinks a:hover {
+  background: rgba(255, 235, 215, 0.1);
+
+  border-color: rgba(255, 235, 215, 0.38);
+
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   TOP INFO / REAL CLOCK
+   ========================================================= */
+
+.topInfo {
+  position: absolute;
+
+  top: 37px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  color: #e6d3bf;
+
+  font-family: "SFMono-Regular", Consolas, monospace;
+
+  font-size: 7px;
+
+  letter-spacing: 2px;
+
+  opacity: 0.58;
+
+  white-space: nowrap;
+}
+
+.clock {
+  font-size: 15px;
+
+  letter-spacing: 1px;
+
+  color: white;
+
+  opacity: 1;
+}
+
+/* =========================================================
+   HERO CONTENT
+   ========================================================= */
+
+.heroContent {
+  position: absolute;
+
+  left: 6vw;
+  top: 50%;
+
+  transform: translateY(-43%);
+
+  z-index: 5;
+}
+
+.liveLabel {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 18px;
+
+  font-size: 8px;
+
+  letter-spacing: 3px;
+
+  color: #f2e0cb;
+
+  opacity: 0.8;
+}
+
+.liveDot {
+  width: 6px;
+  height: 6px;
+
+  flex: 0 0 auto;
+
+  border-radius: 50%;
+
+  background: #d5a160;
+
+  box-shadow: 0 0 13px rgba(213, 161, 96, 0.8);
+
+  animation: dotPulse 1.8s infinite;
+}
+
+@keyframes dotPulse {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   HERO TITLE
+   ========================================================= */
+
+.heroContent h1 {
+  display: flex;
+
+  flex-direction: column;
+
+  margin: 0;
+
+  font-size: clamp(82px, 12vw, 170px);
+
+  line-height: 0.7;
+
+  letter-spacing: -8px;
+
+  font-weight: 500;
+
+  color: #fff0dc;
+
+  text-shadow: 0 10px 45px rgba(0, 0, 0, 0.35);
+}
+
+.heroContent h1 .adda {
+  margin-left: 0.55em;
+
+  color: #e4bc92;
+
+  font-family: Georgia, serif;
+
+  font-style: italic;
+
+  font-weight: 400;
+}
+
+.heroContent h1 small {
+  align-self: flex-end;
+
+  margin-top: 7px;
+  margin-right: 8px;
+
+  font-family: Georgia, serif;
+
+  font-size: 0.25em;
+
+  letter-spacing: 7px;
+
+  color: #f0ddc6;
+}
+
+/* =========================================================
+   TAGLINE
+   ========================================================= */
+
+.tagline {
+  margin-top: 38px;
+
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+
+  font-style: italic;
+
+  font-size: 16px;
+
+  color: #f2dfc9;
+}
+
+.description {
+  margin-top: 10px;
+
+  color: #d3bda8;
+
+  font-size: 10px;
+
+  line-height: 1.8;
+
+  opacity: 0.72;
+}
+
+/* =========================================================
+   STORY LINK
+   ========================================================= */
+
+.storyLink {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 25px;
+
+  padding-bottom: 7px;
+
+  border-bottom: 1px solid rgba(255, 235, 215, 0.3);
+
+  text-decoration: none;
+
+  color: #f1dfca;
+
+  font-size: 7px;
+
+  letter-spacing: 2.5px;
+
+  opacity: 0.75;
+
+  transition:
+    opacity 250ms ease,
+    transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.storyLink b {
+  font-size: 14px;
+
+  font-weight: 400;
+}
+
+.storyLink:hover {
+  opacity: 1;
+
+  transform: translateY(4px);
+}
+
+/* =========================================================
+   HERO BOTTOM
+   ========================================================= */
+
+.heroBottom {
+  position: absolute;
+
+  left: 4vw;
+  right: 4vw;
+  bottom: 25px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  color: #ddc8b3;
+
+  font-size: 7px;
+
+  letter-spacing: 2px;
+
+  opacity: 0.58;
+
+  z-index: 10;
+}
+
+.heroBottom a {
+  color: inherit;
+
+  text-decoration: none;
+
+  transition: color 250ms ease;
+}
+
+.heroBottom a:hover {
+  color: white;
+}
+
+/* =========================================================
+   CHAI ADDA STORY
+   ========================================================= */
+
+.addaStory {
+  position: relative;
+
+  z-index: 5;
+  width: 100%;
+  height: 100svh;
+  min-height: 100svh;
+  /* min-height: 650px; */
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 75px 7vw 100px;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  background:
+    radial-gradient(
+      ellipse at 20% 40%,
+      rgba(122, 76, 45, 0.1),
+      transparent 42%
+    ),
+    radial-gradient(
+      ellipse at 82% 60%,
+      rgba(91, 52, 31, 0.08),
+      transparent 45%
+    ),
+    #120906;
+
+  scroll-snap-align: start;
+  border-radius: 0;
+
+  box-shadow: 0 -35px 90px rgba(0, 0, 0, 0.45);
+}
+
+/* =========================================================
+   STORY ATMOSPHERE
+   ========================================================= */
+
+.addaStory::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -25px;
+
+  z-index: -1;
+
+  background: inherit;
+
+  filter: blur(18px);
+
+  transform: scale(1.04);
+
+  opacity: 0.92;
+
+  pointer-events: none;
+}
+
+.addaStory::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  top: 0;
+
+  height: 120px;
+
+  z-index: -1;
+
+  background: linear-gradient(to bottom, rgba(18, 9, 6, 0), #120906);
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   STORY INNER
+   ========================================================= */
+
+.addaStoryInner {
+  position: relative;
+
+  width: min(1200px, 100%);
+  height: 100%;
+
+  margin: auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  z-index: 2;
+}
+
+/* =========================================================
+   STORY TOP
+   ========================================================= */
+
+.addaStoryTop {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 17px;
+
+  border-top: 1px solid rgba(255, 232, 208, 0.11);
+
+  color: #8f7b6b;
+
+  font-size: 8px;
+
+  letter-spacing: 3px;
+}
+
+/* =========================================================
+   STORY MAIN
+   ========================================================= */
+
+.addaStoryContent {
+  display: grid;
+
+  grid-template-columns: 0.9fr 1fr;
+
+  gap: 8vw;
+
+  align-items: center;
+
+  flex: 1;
+
+  min-height: 0;
+
+  padding: 25px 0;
+}
+
+/* =========================================================
+   STORY LEFT TITLE
+   ========================================================= */
+
+.addaStoryTitle h2 {
+  margin: 0;
+
+  font-size: clamp(70px, 8vw, 125px);
+
+  line-height: 0.82;
+
+  letter-spacing: -5px;
+
+  font-weight: 450;
+
+  color: #f4e3d0;
+}
+
+.addaStoryTitle h2 em {
+  font-family: Georgia, serif;
+
+  font-style: italic;
+
+  font-weight: 400;
+
+  color: #dcb98d;
+}
+
+.addaStoryTitle > span {
+  display: block;
+
+  margin-top: 20px;
+
+  color: #887365;
+
+  font-size: 8px;
+
+  letter-spacing: 4px;
+}
+
+/* =========================================================
+   STORY RIGHT TEXT
+   ========================================================= */
+
+.addaStoryText {
+  max-width: 570px;
+
+  color: #aa9887;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+.addaStoryLabel {
+  display: block;
+
+  margin-bottom: 24px;
+
+  color: #b99670;
+
+  font-size: 8px;
+
+  letter-spacing: 3px;
+}
+
+.addaStoryText p {
+  margin: 0 0 17px;
+}
+
+/* =========================================================
+   STORY QUOTE
+   ========================================================= */
+
+.addaStoryQuote {
+  display: flex;
+
+  gap: 15px;
+
+  margin-top: 24px;
+
+  padding-left: 18px;
+
+  border-left: 1px solid rgba(211, 158, 94, 0.4);
+}
+
+.addaStoryQuote span {
+  font-family: Georgia, serif;
+
+  font-size: 42px;
+
+  line-height: 0.5;
+
+  color: #b77b42;
+}
+
+.addaStoryQuote p {
+  margin: 0;
+
+  font-family: Georgia, serif;
+
+  font-style: italic;
+
+  font-size: 15px;
+
+  line-height: 1.5;
+
+  color: #d8bea2;
+}
+
+/* =========================================================
+   STORY BOTTOM
+   ========================================================= */
+
+.addaStoryBottom {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 15px;
+
+  border-top: 1px solid rgba(255, 232, 208, 0.09);
+
+  color: #756458;
+
+  font-size: 7px;
+
+  letter-spacing: 2.5px;
+}
+
+/* =========================================================
+   CREATOR / ABOUT
+   ========================================================= */
+
+.about {
+  position: relative;
+
+  width: 100%;
+  z-index: 6;
+
+  height: 100svh;
+  min-height: 100svh;
+
+  box-sizing: border-box;
+
+  padding: 75px 7vw 100px;
+
+  display: flex;
+
+  align-items: center;
+
+  overflow: hidden;
+
+  isolation: isolate;
+  border-radius: 0;
+
+  background:
+    radial-gradient(
+      ellipse at 18% 45%,
+      rgba(122, 76, 45, 0.1),
+      transparent 42%
+    ),
+    radial-gradient(
+      ellipse at 82% 55%,
+      rgba(91, 52, 31, 0.08),
+      transparent 45%
+    ),
+    #120906;
+
+  scroll-snap-align: start;
+
+  will-change: transform;
+  transform-origin: center top;
+}
+
+/* =========================================================
+   CREATOR ATMOSPHERE
+   ========================================================= */
+
+.about::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -15%;
+
+  z-index: -2;
+
+  /* background: radial-gradient(
+    circle at 72% 48%,
+    rgba(104, 61, 36, 0.12),
+    transparent 52%
+  );
+
+  filter: blur(55px); */
+
+  background: transparent;
+  filter: none;
+  transform: scale(1.08);
+
+  pointer-events: none;
+}
+
+.about::after {
+  /* content: ""; */
+  content: none;
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -1;
+
+  /* background: linear-gradient(
+    180deg,
+    rgba(18, 9, 6, 0.3),
+    transparent 30%,
+    rgba(10, 5, 3, 0.18)
+  ); */
+
+  background: transparent;
+  pointer-events: none;
+}
+
+.aboutBlur {
+  position: absolute;
+
+  inset: -15%;
+
+  z-index: -1;
+  /* 
+  background: radial-gradient(
+    circle at 75% 45%,
+    rgba(126, 75, 41, 0.1),
+    transparent 42%
+  ); */
+
+  /* filter: blur(45px); */
+
+  background: transparent;
+  filter: none;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   CREATOR CONTAINER
+   ========================================================= */
+
+.aboutContainer {
+  position: relative;
+
+  width: min(1200px, 100%);
+
+  height: 100%;
+
+  margin: auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  z-index: 3;
+}
+
+/* =========================================================
+   CREATOR HEADER
+   ========================================================= */
+
+.aboutHeader {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding-top: 17px;
+
+  border-top: 1px solid rgba(255, 232, 208, 0.13);
+
+  color: #9d8876;
+
+  font-size: 8px;
+
+  letter-spacing: 3px;
+}
+
+/* =========================================================
+   CREATOR GRID
+   ========================================================= */
+
+.aboutGrid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 8vw;
+
+  align-items: center;
+
+  flex: 1;
+
+  min-height: 0;
+
+  padding: 30px 0;
+}
+
+/* =========================================================
+   CREATOR NAME
+   ========================================================= */
+
+.aboutName h2 {
+  margin: 0;
+
+  font-size: clamp(70px, 9vw, 135px);
+
+  line-height: 0.76;
+
+  letter-spacing: -6px;
+
+  font-weight: 450;
+
+  color: #f5e5d2;
+}
+
+.aboutName h2:nth-child(2) {
+  color: #dcb991;
+}
+
+.aboutName > span {
+  display: block;
+
+  margin-top: 12px;
+
+  font-size: 7px;
+
+  letter-spacing: 3px;
+
+  color: #897466;
+}
+
+/* =========================================================
+   CREATOR TEXT
+   ========================================================= */
+
+.aboutText {
+  max-width: 560px;
+
+  padding-top: 10px;
+
+  color: #a99786;
+
+  font-size: 14px;
+
+  line-height: 1.75;
+}
+
+.aboutRole {
+  display: block;
+
+  margin-bottom: 25px;
+
+  color: #b79a7c;
+
+  font-size: 8px;
+
+  letter-spacing: 3px;
+}
+
+.aboutText p {
+  margin: 0 0 20px;
+}
+
+/* =========================================================
+   EMAIL
+   ========================================================= */
+
+.email {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 5px;
+
+  padding-bottom: 7px;
+
+  border-bottom: 1px solid rgba(230, 209, 187, 0.28);
+
+  color: #e7d4c0;
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  transition:
+    color 250ms ease,
+    border-color 250ms ease,
+    transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.email:hover {
+  color: white;
+
+  border-color: white;
+
+  transform: translateX(3px);
+}
+
+/* =========================================================
+   CREATOR FOOTER
+   ========================================================= */
+
+.aboutFooter {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 15px;
+
+  border-top: 1px solid rgba(255, 232, 208, 0.1);
+
+  color: #806e61;
+
+  font-size: 7px;
+
+  letter-spacing: 2px;
+}
+
+/* =========================================================
+   PREMIUM SCROLL REVEAL
+   =========================================================
+
+   IMPORTANT:
+   We animate INNER CONTENT, NOT the complete section.
+   This prevents the page itself from feeling stuck.
+   ========================================================= */
+
+@supports (animation-timeline: view()) {
+  .addaStoryInner {
+    animation: storyContentReveal linear both;
+
+    animation-timeline: view();
+
+    animation-range: entry 0% cover 35%;
+  }
+
+  .aboutContainer {
+    animation: creatorContentReveal linear both;
+
+    animation-timeline: view();
+
+    animation-range: entry 0% cover 35%;
+  }
+
+  @keyframes storyContentReveal {
+    from {
+      opacity: 0.55;
+
+      transform: translateY(24px);
+
+      filter: blur(5px);
+    }
+
+    55% {
+      opacity: 0.88;
+
+      transform: translateY(7px);
+
+      filter: blur(1.5px);
+    }
+
+    to {
+      opacity: 1;
+
+      transform: translateY(0);
+
+      filter: blur(0);
+    }
+  }
+
+  @keyframes creatorContentReveal {
+    from {
+      opacity: 0.55;
+
+      transform: translateY(24px);
+
+      filter: blur(5px);
+    }
+
+    55% {
+      opacity: 0.88;
+
+      transform: translateY(7px);
+
+      filter: blur(1.5px);
+    }
+
+    to {
+      opacity: 1;
+
+      transform: translateY(0);
+
+      filter: blur(0);
+    }
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 750px) {
+  .hero {
+    min-height: 680px;
+  }
+
+  .backgroundImage {
+    object-position: 58% center;
+  }
+
+  /* NAV */
+
+  .navbar {
+    padding: 17px 18px;
+  }
+
+  .brandName {
+    font-size: 12px;
+  }
+
+  .brandSub {
+    font-size: 6px;
+  }
+
+  .brandCup {
+    width: 30px;
+    height: 30px;
+  }
+
+  .navLinks a {
+    padding: 8px 11px;
+
+    font-size: 7px;
+  }
+
+  /* CLOCK */
+
+  .topInfo {
+    top: 85px;
+
+    gap: 14px;
+
+    font-size: 6px;
+  }
+
+  .clock {
+    font-size: 13px;
+  }
+
+  /* HERO */
+
+  .heroContent {
+    left: 25px;
+    right: 25px;
+
+    top: 47%;
+
+    transform: translateY(-35%);
+  }
+
+  .heroContent h1 {
+    font-size: clamp(75px, 21vw, 125px);
+
+    letter-spacing: -5px;
+  }
+
+  .tagline {
+    margin-top: 34px;
+
+    font-size: 17px;
+  }
+
+  .description {
+    font-size: 9px;
+  }
+
+  /* HERO BOTTOM */
+
+  .heroBottom {
+    left: 18px;
+    right: 18px;
+
+    bottom: 17px;
+
+    font-size: 5px;
+
+    letter-spacing: 1.5px;
+  }
+
+  .heroBottom span:nth-child(2) {
+    display: none;
+  }
+
+  /* STORY */
+
+  .addaStory {
+    height: auto;
+    min-height: 100svh;
+
+    padding: 85px 22px 100px;
+  }
+
+  .addaStoryInner {
+    height: auto;
+  }
+
+  .addaStoryContent {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+
+    padding: 35px 0;
+  }
+
+  .addaStoryTitle h2 {
+    font-size: clamp(65px, 18vw, 105px);
+
+    letter-spacing: -4px;
+  }
+
+  .addaStoryText {
+    font-size: 13px;
+  }
+
+  .addaStoryBottom {
+    margin-top: 25px;
+  }
+
+  .addaStoryBottom span:last-child {
+    display: none;
+  }
+
+  /* CREATOR */
+
+  .about {
+    height: auto;
+    min-height: 100svh;
+
+    padding: 85px 22px 110px;
+  }
+
+  .aboutContainer {
+    height: auto;
+  }
+
+  .aboutGrid {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+
+    padding: 40px 0;
+  }
+
+  .aboutName h2 {
+    font-size: clamp(65px, 19vw, 105px);
+
+    letter-spacing: -4px;
+  }
+
+  .aboutText {
+    font-size: 13px;
+  }
+
+  .aboutFooter {
+    margin-top: 30px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .backgroundImage {
+    animation: none;
+  }
+
+  .liveDot {
+    animation: none;
+  }
+
+  .addaStoryInner,
+  .aboutContainer {
+    animation: none !important;
+
+    opacity: 1;
+
+    transform: none;
+
+    filter: none;
+  }
+}
+
+/* =====================================================
+   CINEMATIC HERO DEPTH
+   ===================================================== */
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -2;
+
+  background: rgba(10, 5, 3, 0.12);
+
+  backdrop-filter: blur(0px);
+
+  -webkit-backdrop-filter: blur(0px);
+
+  pointer-events: none;
+
+  transition:
+    backdrop-filter 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    background 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* =====================================================
+   STORY RISING TRANSITION
+   ===================================================== */
+
+.addaStory {
+  margin-top: 0;
+
+  transform-origin: center top;
+
+  will-change: transform;
+}
+
+.addaStory::after {
+  content: "";
+
+  position: absolute;
+
+  top: -80px;
+  left: 0;
+  right: 0;
+
+  height: 120px;
+
+  background: linear-gradient(to bottom, rgba(18, 9, 6, 0), #120906);
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+/* =====================================================
+   CONTINUOUS SECTION SURFACE
+   ===================================================== */
+
+.addaStory,
+.about {
+  border-radius: 0;
+  border: none;
+
+  background:
+    radial-gradient(
+      ellipse at 20% 45%,
+      rgba(122, 76, 45, 0.09),
+      transparent 42%
+    ),
+    radial-gradient(
+      ellipse at 80% 55%,
+      rgba(91, 52, 31, 0.07),
+      transparent 45%
+    ),
+    #120906;
+}
+
+.radio {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-left: 12px;
+  position: relative;
+  top: -3px;
+  white-space: nowrap;
+}
+
+.listenButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 10px;
+  padding: 13px 22px;
+
+  border: 1px solid rgba(255, 235, 215, 0.22);
+  border-radius: 999px;
+
+  background: rgba(35, 18, 10, 0.45);
+  color: #f7e8d7;
+
+  backdrop-filter: blur(12px);
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.listenButton:hover {
+  transform: translateY(-2px);
+
+  background: rgba(255, 235, 215, 0.12);
+
+  border-color: rgba(255, 235, 215, 0.4);
+}
+
+.listenButton span {
+  font-size: 10px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 24px 18px;
+    min-height: 100svh;
+  }
+
+  .listenButton {
+    width: 100%;
+    justify-content: center;
+  }
+}

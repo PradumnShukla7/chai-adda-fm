@@ -1,0 +1,10 @@
+.app {
+  width: 100%;
+  min-height: 100vh;
+  background: #0d0705;
+  color: #f5e8d8;
+}
+
+* {
+  box-sizing: border-box;
+}

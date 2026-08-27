@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background: #120906;
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+}
+
+body {
+  margin: 0;
+  background: #120906;
+  overflow-x: hidden;
+}
+a {
+  color: inherit;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(221, 167, 103, 0.35);
+  color: #fff7ed;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0705;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5b3925;
+  border-radius: 20px;
+}
