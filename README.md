@@ -1,16 +1,29 @@
-# React + Vite
+# ☕ Chai Adda FM
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **Suffer Se Safar Tak 🎶**
 
-Currently, two official plugins are available:
+A cozy online radio experience inspired by chai, music, friendship, and late-evening vibes.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+- 🎵 YouTube-powered music player
+- ▶️ One-click playback
+- ⏭️ Next / Previous
+- 🔀 Shuffle
+- 🔁 Repeat
+- 🔊 Volume control
+- 📱 Responsive design
+- ⚡ Optimized loading
+- 🔍 SEO optimized
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Built With
 
-## Expanding the ESLint configuration
+- React
+- Vite
+- JavaScript
+- CSS
+- YouTube IFrame API
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🌐 Live Website
+
+[Chai Adda FM](https://chai-adda-fm.vercel.app/)
