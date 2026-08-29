@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chai-adda-fm.vercel.app/sitemap.xml
